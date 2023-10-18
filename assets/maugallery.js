@@ -153,6 +153,7 @@
           index = i ;
         }
       });
+      index = (index > 0) ? index - 1 : imagesCollection.length - 1;      
       next =
         imagesCollection[index] ||
         imagesCollection[imagesCollection.length - 1];
@@ -192,6 +193,7 @@
           index = i;
         }
       });
+      index = (index < imagesCollection.length - 1) ? index + 1 : 0;
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
@@ -234,6 +236,7 @@
       } else {
         console.error(`Unknown tags position: ${position}`);
       }
+      $("[data-images-toggle]").css("cursor", "pointer");
     },
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
@@ -259,5 +262,11 @@
         }
       });
     }
-  };
+  }
+  ;$('#carouselExampleIndicators').on('slide.bs.carousel', function (e) {
+    var nextImage = $(e.relatedTarget).find('img[data-src]');
+    nextImage.attr('src', nextImage.data('src'));
+    nextImage.removeAttr('data-src');
+  });
+  
 })(jQuery);
