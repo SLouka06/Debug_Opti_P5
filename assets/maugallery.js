@@ -241,6 +241,7 @@
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
         return;
+        console.log("backgroundcolor2")
       }
       $(".active-tag").removeClass("active active-tag");
       $(this).addClass("active-tag");
