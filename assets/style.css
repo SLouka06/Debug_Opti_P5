@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap');
 body {
 	max-width: 1920px;
 	margin: auto;
@@ -270,7 +271,7 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6, #about-me p {
+	#about-me h3, #about-me p {
 		width: 100%;
 	}
 }
